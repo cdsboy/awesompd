@@ -1091,13 +1091,8 @@ function awesompd:try_get_local_cover()
       -- Get the path to the file currently playing.
       local _, _, current_file_folder = 
          string.find(self:command_read('current -f "%file%"', "*line"), '(.+%/).*')
-      
-      local folder
-      if current_file_folder then
-        folder = music_folder .. current_file_folder
-      else
-        folder = music_folder
-      end
+
+      local folder = music_folder .. current_file_folder
       
       -- Get all images in the folder. Also escape occasional single
       -- quotes in folder name.
